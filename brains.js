@@ -5,6 +5,14 @@ window.addEventListener('scroll', function() {
     b.style.top = `calc(${window.scrollY}px - 100vh)`;
   });
 
+document.addEventListener("click", function(a) {
+    if(a.target.classList.contains("rotatie")){
+    }else{
+      reset();
+    }
+    
+  });
+  
   var maxvalue;
   var trendingindex;
   var trendingcontainer;
@@ -14,16 +22,19 @@ window.addEventListener('scroll', function() {
       if(maxvalue-4 > curposition){
         curposition++;
       }
-      trendingcontainer.style.marginLeft = -220 * curposition + "px";
+      trendingcontainer.style.marginLeft = -270 * curposition + "px";
     }else{
       if(curposition > 0){
         curposition--;
       }
-      trendingcontainer.style.marginLeft = -220 * curposition + "px";
+      trendingcontainer.style.marginLeft = -270 * curposition + "px";
     }
   }
 
 function initialize(){ //add everything into an array upon loading display with images
+  mainbody = document.getElementsByTagName("body")[0];
+  screenblocker = document.getElementById("screenblocker")
+  trendingdescription = document.getElementById("trendingpopup");
   herobackground = document.getElementById("herobg");
   displaybackground = document.getElementById("displaybg");
   herobackground1 = document.getElementById("herobg1");
@@ -42,14 +53,64 @@ var herobackground;
 var displaybackground;
 var herobackground1;
 var displaybackground1;
+var buffer = false;
+var queued;
 function backgroundchanger(a){
-  herobackground1.src = a;
-  displaybackground1.src = a;
-  herobackground.src = a;
-  displaybackground.src = a;
+  if(!buffer){
+    herobackground.src = a;
+    displaybackground.src = a;
+    var b = herobackground1.style.opacity || 1;
+    let intervalID = setInterval(fadein, 50); 
+      function fadein() {
+        buffer = true;
+          if (b > 0) { 
+              b -= 0.05;
+              herobackground1.style.opacity = b;
+              displaybackground1.style.opacity = b;
+          } else {
+            buffer = false;
+              herobackground1.src = a;
+              displaybackground1.src = a;
+              herobackground1.style.opacity = 1;
+              displaybackground1.style.opacity = 1;
+              clearInterval(intervalID);
+          }
+      }
+  }else{
+    queued = a;
+    setTimeout(() => {
+      backgroundchanger(queued);
+      }, 200); 
+  } 
+}                                                                                                                                                                                                     function trefing(){var thething = document.getElementById("trenfing");thething.style.top = 65 + "vh";}
+
+var trendingdescription;
+function trendingmodifier(a, b){
+    backgroundchanger(a);
+    trendingdescription.style.height = 600 + "px";
+    trendingdescription.style.width = 70 + "vw";
 }
 
-function trendingdescriptionmodifier(a){
-    backgroundchanger(a);
-    console.log(a);
+function settrendingdescription(){
+
 }
+
+function reset(){
+    backgroundchanger("image (1).png");
+    trendingdescription.style.height = 0 + "px";
+    trendingdescription.style.width = 0 + "vw";
+}
+
+var screenblocker;
+var mainbody;
+function disabled1(a){
+  if(a){
+    mainbody.style.overflow = "hidden";
+  screenblocker.style.visibility = "visible";
+  }else{
+    mainbody.style.overflow = "visible";
+    screenblocker.style.visibility = "hidden";
+  }
+  
+}
+

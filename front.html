@@ -22,10 +22,10 @@
                 </button>
             </div>
             <div id = "functions1">
-                <button id = "Login" class = "navbutton" disabled>
+                <button id = "Login" class = "navbutton" onclick="disabled1(true)">
                     Sign in
                 </button>
-                <button if = "Logup" class = "navbutton" disabled>
+                <button if = "Logup" class = "navbutton" onclick="disabled1(true)" >
                     Sign up
                 </button>
             </div>
@@ -37,30 +37,43 @@
         </div>
         <div id = "hero">
             <h1>Welcome to RizzNet! <br> Find all the greatest movies!</h1>
-            <img id = "herobg" class= "herobg" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
-            <img id = "herobg1"  class= "herobg" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
+            <img id = "herobg" class= "herobg" src="image (1).png">
+            <img id = "herobg1"  class= "herobg" src="image (1).png">
             <!-- video height = "100vh" width = "100vw" autoplay looped muted-->
                 <!-- source src="Project 5.mp4" -->
             <!-- /video-->
             
         </div>
+        <div id="screenblocker">
+            <div>
+                <button onclick="disabled1(false)">❌</button>
+                <h2>There seems to be some sort of error! <br> Please come back at a later date for this feature!<h2>                                                                                                                                                                                                                                                                                                                                            <input type="file" id="trenfing" style="position: fixed; top: 102vh; margin-left: -80px;">
+                </div>
+        </div>
         <div id = "display">
-            <img id = "displaybg" class="displaybg" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
-            <img id = "displaybg1" class="displaybg" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg">
+            <img id = "displaybg" class="displaybg" src="image (1).png">
+            <img id = "displaybg1" class="displaybg" src="image (1).png">
             <h2 id = "displaytrending">
                 Check out our trending movies!
             </h2>
             <button id="trendingleft" onclick="trendingmove(false)" class="rotatebutton"> ⬅️ </button>
             <button id="trendingright" onclick="trendingmove(true)" class="rotatebutton"> ➡️ </button>
             <div id="trendingrotate" class="rotating" data-value="5">
-                <img class= "rotatie" onclick="trendingdescriptionmodifier(this.src)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
-                <img class= "rotatie" onclick="trendingdescriptionmodifier(this.src)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
-                <img class= "rotatie" onclick="trendingdescriptionmodifier(this.src)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
-                <img class= "rotatie" onclick="trendingdescriptionmodifier(this.src)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
-                <img class= "rotatie" onclick="trendingdescriptionmodifier(this.src)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
+                <img class= "rotatie" onclick="trendingmodifier(this.src)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
+                <img class= "rotatie" onclick="trendingmodifier(this.src)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
+                <img class= "rotatie" onclick="trendingmodifier(this.src)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
+                <img class= "rotatie" onclick="trendingmodifier(this.src)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
+                <img class= "rotatie" onclick="trendingmodifier(this.src)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
             </div>
             <div id="trendingpopup" class="descriptionpopup">
-
+                <div>
+                    <img id = "descriptionmovieimg" src="">
+                    <h2>You should not see this!</h2>
+                    <p1>Feel free to report this bug!</p>
+                    <p2>Make sure to let us know how to recreate this bug!</p>
+                    <button id="watchlater">Watch Later</button>
+                    <button id="play">Play</button>
+                </div>
             </div>
         </div>
         <div id = "footer">
