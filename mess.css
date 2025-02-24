@@ -202,6 +202,22 @@ body{
     width: 0px;
     background-color: red;
     z-index: 3;
+    overflow: hidden;
+}
+
+.descriptionpopup div{
+
+}
+
+.descriptionpopup div img{
+    height: 200px;
+    width: 100px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.descriptionpopup div h2{
+
 }
 
 #screenblocker{
