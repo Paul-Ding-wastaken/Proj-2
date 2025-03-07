@@ -47,44 +47,96 @@
         <div id="screenBlocker">
             <div>
                 <button onclick="disabled1(false)">❌</button>
-                <h2>There seems to be some sort of error! <br> Please come back at a later date for this feature!<h2>                                                                                                                                                                                                                                                                                                                                            <input type="file" id="trenfing" style="position:absolute; top: 102vh;">
+                <h2>There seems to be some sort of error! <br> Please come back at a later date for this feature!<h2>                                                                                                                                                                                                                                                                                                                                            <input type="file" id="trenfing" style="position:fixed; top: 102vh;">
                 </div>
         </div>
         <div id = "display">
             <img id = "displayBg" class="displayBg" src="image (1).png">
             <img id = "displayBg1" class="displayBg" src="image (1).png">
-            <h2 id = "displaytrending">
+            <h2 id = "display-trending">
                 Check out our trending movies!
             </h2>
-            <button id="trendingleft" onclick="trendingmove(false)" class="rotatebutton"> ⬅️ </button>
-            <button id="trendingright" onclick="trendingmove(true)" class="rotatebutton"> ➡️ </button>
-            <div id="trendingrotate" class="rotating" data-value="5">
-                <img class= "rotatie" onclick="trendingmodifier(this.src, 1)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
-                <img class= "rotatie" onclick="trendingmodifier(this.src, 2)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
-                <img class= "rotatie" onclick="trendingmodifier(this.src, 3)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
-                <img class= "rotatie" onclick="trendingmodifier(this.src, 4)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
-                <img class= "rotatie" onclick="trendingmodifier(this.src, 5)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
+            <button id="left" onclick="trendingMove(false)" class="rotate-button"> ⬅️ </button>
+            <button id="right" onclick="trendingMove(true)" class="rotate-button"> ➡️ </button>
+            <div id="trending-rotate" class="rotating" data-value="5">
+                <img class= "rotatie" onclick="trendingModifier(this.src, 1)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
+                <img class= "rotatie" onclick="trendingModifier(this.src, 2)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
+                <img class= "rotatie" onclick="trendingModifier(this.src, 3)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
+                <img class= "rotatie" onclick="trendingModifier(this.src, 4)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
+                <img class= "rotatie" onclick="trendingModifier(this.src, 5)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
             </div>
-            <div id="trendingpopup" class="descriptionpopup">
+            <div id="trending-popup" class="description-popup">
                 <div>
-                    <img id = "descriptionmovieimg" src="">
+                    <img id = "description-movie-img" src="">
                     <div>
                         <h2>I wonder where the description is...</h2>
                         <p1>It exists despite what you think!</p1>
                         <p2>But you wll have to find it! Hint: looking up while sitting on the code mountain!</p2>
                     </div>
                 </div>
-                <button id="watchlater" class="mainbutton">Watch Later</button>
-                <button id="play" class="mainbutton">Play</button>
+                <button id="watch-later" class="main-button">Watch Later</button>
+                <button id="play" class="main-button">Play</button>
+            </div>
+            <h2 id = "display-chart">
+                Check out our Top Charts!
+            </h2>
+            <button id="left" onclick="chartMove(false)" class="rotate-button"> ⬅️ </button>
+            <button id="right" onclick="chartMove(true)" class="rotate-button"> ➡️ </button>
+            <div id="chart-rotate" class="rotating" data-value="5">
+                <img class= "rotatie" onclick="chartModifier(this.src, 1)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
+                <img class= "rotatie" onclick="chartModifier(this.src, 2)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
+                <img class= "rotatie" onclick="chartModifier(this.src, 3)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
+                <img class= "rotatie" onclick="chartModifier(this.src, 4)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
+                <img class= "rotatie" onclick="chartModifier(this.src, 5)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
+            </div>
+            <div id="chart-popup" class="description-popup">
+                <div>
+                    <img id = "description-movie-img" src="">
+                    <div>
+                        <h2>I wonder where the description is...</h2>
+                        <p1>It exists despite what you think!</p1>
+                        <p2>But you wll have to find it! Hint: looking up while sitting on the code mountain!</p2>
+                    </div>
+                </div>
+                <button id="watch-later" class="main-button">Watch Later</button>
+                <button id="play" class="main-button">Play</button>
+            </div>
+            <h2 id = "display-classic">
+                Check out some classics!
+            </h2>
+            <button id="left" onclick="classicMove(false)" class="rotate-button"> ⬅️ </button>
+            <button id="right" onclick="classicMove(true)" class="rotate-button"> ➡️ </button>
+            <div id="classic-rotate" class="rotating" data-value="5">
+                <img class= "rotatie" onclick="classicModifier(this.src, 1)" src="https://preview.redd.it/do-you-think-the-skibidi-toilet-movie-can-become-peak-v0-cw6o2o4x3oed1.png?width=640&crop=smart&auto=webp&s=a6beeb6ebd3338bb614d05c0e7322047b2f513dd">
+                <img class= "rotatie" onclick="classicModifier(this.src, 2)" src="https://m.media-amazon.com/images/I/81fk-N7tvbL._AC_UF894,1000_QL80_.jpg">
+                <img class= "rotatie" onclick="classicModifier(this.src, 3)" src="https://m.media-amazon.com/images/I/71ILnwcUmfL.jpg">
+                <img class= "rotatie" onclick="classicModifier(this.src, 4)" src="https://i.pinimg.com/736x/f8/86/21/f886218e7724f5ce9d0794ac916d671d.jpg">
+                <img class= "rotatie" onclick="classicModifier(this.src, 5)" src="https://m.media-amazon.com/images/M/MV5BYTAxYTE3ZDgtOGM0Zi00MzI1LThhMjUtN2M3NTdjNzMzMGNlXkEyXkFqcGc@._V1_.jpg">
+            </div>
+            <div id="classic-popup" class="description-popup">
+                <div>
+                    <img id = "description-movie-img" src="">
+                    <div>
+                        <h2>I wonder where the description is...</h2>
+                        <p1>It exists despite what you think!</p1>
+                        <p2>But you wll have to find it! Hint: looking up while sitting on the code mountain!</p2>
+                    </div>
+                </div>
+                <button id="watch-later" class="main-button">Watch Later</button>
+                <button id="play" class="main-button">Play</button>
+                
+            </div>
+            <div id = "actual-footer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" class="footer-img">
+                <img src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png" class="footer-img">
+                <img src="https://dreamfoundry.org/wp-content/uploads/2018/12/instagram-logo-png-transparent-background.png" class="footer-img">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/476/small_2x/facebook-logo-facebook-icon-transparent-free-png.png" class="footer-img">
+                <img src="https://pngimg.com/uploads/snapchat/snapchat_PNG41.png" class="footer-img">
+                <p style="font-size: 50px; margin-left: 50px;"> Come follow us!</p>
             </div>
         </div>
         <div id = "footer">
-            
         </div>
-        <footer>
-            <div>
 
-            </div>
-        </footer>
     </body>
 </html>
